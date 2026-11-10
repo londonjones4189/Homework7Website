@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <title>Experience | London Jones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="experience-page">
+    <header class="site-header">
+        <nav class="site-navigation" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="experience.html" aria-current="page">Experience</a>
+        </nav>
+    </header>
+    <main class="experience-main">
+        <h1>Experience</h1>
+        <section class="tech-stack-section" aria-labelledby="tech-stack-heading">
+            <h2 id="tech-stack-heading" class="tech-stack-title">Tech Stack</h2>
+            <div id="tech-stack-chart" class="tech-stack-chart" aria-label="Circular chart of technology familiarity"></div>
+            <p id="tech-stack-status" class="tech-stack-status" aria-live="polite"></p>
+        </section>
+        <section aria-labelledby="work-heading">
+            <h2 id="work-heading">Work</h2>
+            <ul id="work-list" class="experience-list"></ul>
+        </section>
+        <section aria-labelledby="leadership-heading">
+            <h2 id="leadership-heading">Leadership</h2>
+            <ul id="leadership-list" class="experience-list"></ul>
+        </section>
+        <section class="experience-stories" aria-labelledby="stories-heading">
+            <h2 id="stories-heading">A Closer Look</h2>
+            <div class="experience-stories-grid">
+                <article class="experience-story">
+                    <img src="public/photos/Bose2.jpeg" alt="Bose office building on a sunny day">
+                    <div class="experience-story-copy">
+                        <h3>Bose</h3>
+                       Last year, I spent six months at Bose as a Copywriter Co-op on the creative team in their Boston office. One of the highlights of my experience was contributing to the Bose x LISA campaign, where I developed copy across a variety of platforms, including web pages, emails, app push notifications, posters, billboards, pop-up content, product detail pages, and giveaway pages. I also had the opportunity to work on two additional campaign launches: the LISA x Petal Pink lookbook and the LISA x Lunar Blue launch. Through these projects, I learned how to adapt brand messaging across different channels while maintaining a consistent creative vision.
+                </article>
+                <article class="experience-story">
+                    <img src="public/photos/ibm2.jpeg" alt="London at an IBM ATX event">
+                    <div class="experience-story-copy">
+                        <h3>IBM</h3>
+                        This past summer, I had the amazing opportunity to work at IBM’s Austin office as a Technical Writing Intern on the AI for Developers team. My internship project centered on DeckFlow which is a DJ software built using IBM’s agentic IDE. I contributed to the project by fixing bugs, restructuring code, developing new features, and building and writing its documentation site. Beyond development, I also created promotional content for DeckFlow featured on IBM’s THINK blog. A highlight of the experience was seeing DeckFlow used by a professional DJ at IBM’s TechXchange conference last month, bringing our work to a live audience. </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <script>
+        const experiences = [
+            { image: "public/photos/supplytrace.jpeg", company: "SupplyTrace", title: "Student Researcher", period: "September 2026 - Present" },
+            { image: "public/photos/ibm.jpeg", company: "IBM", title: "Technical Writing Intern", period: "June 2026 - Sept 2026" },
+            { image: "public/photos/cbg.jpeg", company: "Clear Ballot Group", title: "Software Engineering Co-op", period: "January 2026 - June 2026" },
+            { image: "public/photos/bose.jpeg", company: "Bose", title: "Copywriter Co-op", period: "January 2025 - June 2025" },
+        ];
+
+        const leadership = [
+            { image: "public/photos/developforgood.jpeg", company: "Develop For Good", title: "Product Manager", period: "October 2026 - Present" },
+            { image: "public/photos/scout.jpeg", company: "Scout", title: "Project Manager", period: "September 2025 - Present" },
+        ];
+
+        function renderList(items, listId) {
+            const list = document.getElementById(listId);
+
+            items.forEach((item) => {
+                const row = document.createElement("li");
+                const image = document.createElement("img");
+                const details = document.createElement("div");
+                const company = document.createElement("h3");
+                const role = document.createElement("p");
+                const period = document.createElement("p");
+
+                row.className = "experience-item";
+                details.className = "experience-details";
+                image.src = item.image;
+                image.alt = "";
+                image.className = "experience-logo";
+                company.textContent = item.company;
+                role.className = "experience-role";
+                role.textContent = item.title;
+                period.className = "experience-period";
+                period.textContent = item.period;
+                details.append(company, role, period);
+                row.append(image, details);
+                list.append(row);
+            });
+        }
+
+        renderList(experiences, "work-list");
+        renderList(leadership, "leadership-list");
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="interactivity.js"></script>
+</body>
+</html>

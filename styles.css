@@ -1,0 +1,443 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fredoka:wght@500;600&display=swap");
+
+:root {
+	--accent: #173f5f;
+	--accent-shadow: #b8cce0;
+	color-scheme: light;
+	font-family: "DM Sans", sans-serif;
+	color: #23332d;
+	background: #ffffff;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	display: grid;
+	place-items: center;
+	background: #ffffff;
+}
+
+main {
+	width: min(900px, calc(100% - 48px));
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 300px;
+	align-items: center;
+	gap: clamp(36px, 8vw, 88px);
+	padding: 48px 0;
+}
+
+h1 {
+	margin: 0 0 16px;
+	font-family: "Fredoka", "Trebuchet MS", sans-serif;
+	font-size: clamp(3rem, 7vw, 5.5rem);
+	font-weight: 600;
+	line-height: 0.98;
+	color: var(--accent);
+}
+
+p {
+	max-width: 440px;
+	margin: 0;
+	font-size: 1.1rem;
+	line-height: 1.7;
+}
+
+.social-links {
+	display: flex;
+	gap: 12px;
+	margin-top: 28px;
+}
+
+.social-links a {
+	width: 48px;
+	height: 48px;
+	display: grid;
+	place-items: center;
+	border: 1px solid #c9d8ce;
+	border-radius: 8px;
+	color: var(--accent);
+	background: #fff;
+	transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.social-links a:hover {
+	transform: translateY(-3px);
+	border-color: var(--accent);
+	color: var(--accent);
+}
+
+.social-links a:focus-visible,
+.site-navigation a:focus-visible {
+	outline: 3px solid var(--accent);
+	outline-offset: 3px;
+}
+
+.social-links svg {
+	width: 23px;
+	height: 23px;
+	fill: currentColor;
+}
+
+.headshot {
+	display: block;
+	width: 100%;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	border: 6px solid #fff;
+	border-radius: 8px;
+}
+
+.navigation-page {
+	display: block;
+}
+
+.home-page {
+	display: flex;
+	flex-direction: column;
+}
+
+.home-page main {
+	width: min(980px, calc(100% - 48px));
+	grid-template-columns: minmax(0, 1fr) 360px;
+	gap: clamp(36px, 6vw, 72px);
+	margin: auto;
+}
+
+.home-page p {
+	font-size: 1rem;
+	line-height: 1.65;
+}
+
+.intro > p + p {
+	margin-top: 14px;
+}
+
+.experience-page {
+	display: block;
+}
+
+.experience-page p {
+	font-family: "DM Sans", sans-serif;
+	font-size: 1rem;
+	line-height: 1.65;
+}
+
+.site-header {
+	width: min(900px, calc(100% - 48px));
+	margin: 0 auto;
+	padding: 24px 0;
+}
+
+.site-navigation {
+	display: flex;
+	justify-content: flex-end;
+	gap: 12px;
+}
+
+.site-navigation a {
+	padding: 9px 16px;
+	border: 1px solid #d5e0e9;
+	border-radius: 999px;
+	color: var(--accent);
+	background: #f0f5f9;
+	font-family: "Fredoka", "Trebuchet MS", sans-serif;
+	font-size: 1.1rem;
+	text-decoration: none;
+	transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.site-navigation a:hover {
+	transform: translateY(-2px);
+	background: #e2edf5;
+}
+
+.site-navigation a[aria-current="page"] {
+	background: #dce9f3;
+	font-weight: 600;
+}
+
+.experience-main {
+	width: min(760px, calc(100% - 48px));
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	align-items: start;
+	gap: 30px 24px;
+	margin: 12px auto 64px;
+}
+
+.experience-main h1 {
+	grid-column: 1 / -1;
+	margin-bottom: 0;
+	font-size: 3.5rem;
+	text-align: center;
+}
+
+.tech-stack-section {
+	grid-column: 1 / -1;
+	grid-row: 2;
+	text-align: center;
+}
+
+.experience-main > section[aria-labelledby="work-heading"] {
+	grid-column: 1;
+	grid-row: 3;
+}
+
+.experience-main > section[aria-labelledby="leadership-heading"] {
+	grid-column: 2;
+	grid-row: 3;
+}
+
+.experience-stories {
+	grid-column: 1 / -1;
+	grid-row: 4;
+}
+
+.experience-main .experience-stories > h2 {
+	margin-bottom: 20px;
+	font-size: 2rem;
+}
+
+.experience-stories-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 24px;
+}
+
+.experience-story {
+	min-width: 0;
+}
+
+.experience-story > img {
+	display: block;
+	width: 100%;
+	height: 320px;
+	object-fit: cover;
+}
+
+.experience-story-copy {
+	padding: 14px 0 0;
+}
+
+.experience-story-copy h3 {
+	margin: 0 0 10px;
+	color: var(--accent);
+	font-family: "Fredoka", "Trebuchet MS", sans-serif;
+	font-size: 1.4rem;
+}
+
+.experience-story-copy p {
+	max-width: none;
+	margin: 0 0 14px;
+}
+
+.experience-story-copy p:last-child {
+	margin-bottom: 0;
+}
+
+.experience-main .tech-stack-title {
+	margin: 0 0 8px;
+	font-size: 2rem;
+}
+
+.tech-stack-chart {
+	width: min(100%, 560px);
+	margin: 0 auto;
+}
+
+.tech-stack-chart svg {
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: visible;
+}
+
+.tech-grid {
+	stroke: #d7e2eb;
+	stroke-dasharray: 3 5;
+}
+
+.tech-guide {
+	stroke: #e8eef3;
+	stroke-width: 1;
+}
+
+.tech-bar {
+	cursor: pointer;
+	fill: #6b94b5;
+	stroke: #ffffff;
+	stroke-width: 2;
+	transition: fill 150ms ease, opacity 150ms ease;
+}
+
+.tech-bar:hover,
+.tech-bar.is-active,
+.tech-bar:focus-visible {
+	fill: var(--accent);
+	stroke: #8eb6d6;
+	stroke-width: 3;
+	outline: none;
+}
+
+.tech-label {
+	fill: #344a5a;
+	font-family: "DM Sans", sans-serif;
+	font-size: 13px;
+}
+
+.tech-center-label {
+	fill: var(--accent);
+	font-family: "Fredoka", "Trebuchet MS", sans-serif;
+	font-size: 18px;
+}
+
+.tech-center-value {
+	fill: #5b6d7a;
+	font-family: "DM Sans", sans-serif;
+	font-size: 12px;
+}
+
+.tech-stack-status {
+	margin: -4px 0 0;
+	color: #53636e;
+	font-size: 0.9rem;
+}
+
+.experience-main section + section {
+	margin-top: 0;
+}
+
+.experience-main h2 {
+	margin: 0 0 14px;
+	color: var(--accent);
+	font-family: "Fredoka", "Trebuchet MS", sans-serif;
+	text-align: center;
+	font-size: 1.8rem;
+}
+
+.experience-list {
+	display: grid;
+	gap: 10px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.experience-item {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	min-height: 88px;
+	padding: 12px 16px;
+	border: 1px solid #dfe7ed;
+	border-radius: 8px;
+	background: #fff;
+}
+
+.experience-logo {
+	flex: 0 0 56px;
+	width: 56px;
+	height: 56px;
+	object-fit: contain;
+	border-radius: 6px;
+}
+
+.experience-mark {
+	display: grid;
+	place-items: center;
+	background: #edf3f8;
+	color: var(--accent);
+	font-family: "Fredoka", "Trebuchet MS", sans-serif;
+	font-size: 1.25rem;
+}
+
+.experience-details h3 {
+	margin: 0 0 3px;
+	font-size: 1.05rem;
+}
+
+.experience-details p {
+	line-height: 1.45;
+}
+
+.experience-period {
+	margin-top: 3px !important;
+	font-size: 1rem !important;
+	color: #53636e;
+}
+
+@media (max-width: 650px) {
+	main {
+		width: min(440px, calc(100% - 40px));
+		grid-template-columns: 1fr;
+		gap: 36px;
+		padding: 48px 0;
+	}
+
+	.home-page main {
+		width: min(440px, calc(100% - 40px));
+		grid-template-columns: 1fr;
+	}
+
+	.intro {
+		text-align: center;
+	}
+
+	p {
+		margin-inline: auto;
+	}
+
+	.social-links {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.headshot {
+		width: min(100%, 320px);
+		justify-self: center;
+	}
+
+	.site-header {
+		width: calc(100% - 40px);
+	}
+
+	.site-navigation {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.experience-main {
+		width: calc(100% - 40px);
+		grid-template-columns: 1fr;
+		gap: 28px;
+		margin-top: 8px;
+	}
+
+	.experience-main > section[aria-labelledby="work-heading"],
+	.experience-main > section[aria-labelledby="leadership-heading"] {
+		grid-column: 1;
+		grid-row: auto;
+	}
+
+	.experience-stories {
+		grid-column: 1;
+		grid-row: auto;
+	}
+
+	.experience-stories-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.experience-main h1 {
+		font-size: 3rem;
+	}
+
+	.experience-item {
+		gap: 12px;
+		padding-inline: 12px;
+	}
+}
